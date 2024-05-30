@@ -1,35 +1,27 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
-Do not remove the back-link in this web template 
--------------------------------------------------------*/
-
 $(window).load(function() {
     jQuery('#all').click();
-    return false;
 });
 
 $(document).ready(function() {
-	$('.carousel').carousel();
+    $('.carousel').carousel();
     $('#header_wrapper').scrollToFixed();
     $('.res-nav_click').click(function() {
         $('.main-nav').slideToggle();
-        return false
-
     });
-	
+
     function resizeText() {
         var preferredWidth = 767;
         var displayWidth = window.innerWidth;
         var percentage = displayWidth / preferredWidth;
         var fontsizetitle = 25;
         var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
-        $(".divclass").css("font-size", newFontSizeTitle)
+        $(".divclass").css("font-size", newFontSizeTitle);
     }
+
     if ($('#main-nav ul li:first-child').hasClass('active')) {
         $('#main-nav').css('background', 'none');
     }
+
     $('#mainNav').onePageNav({
         currentClass: 'active',
         changeHash: false,
@@ -37,27 +29,24 @@ $(document).ready(function() {
         scrollThreshold: 0.2,
         filter: '',
         easing: 'swing',
-        begin: function() {
-        },
+        begin: function() {},
         end: function() {
-            if (!$('#main-nav ul li:first-child').hasClass('active')) {
-                $('.header').addClass('addBg');
-            } else {
-                $('.header').removeClass('addBg');
-            }
-
+            toggleHeaderBg();
         },
         scrollChange: function($currentListItem) {
-            if (!$('#main-nav ul li:first-child').hasClass('active')) {
-                $('.header').addClass('addBg');
-            } else {
-                $('.header').removeClass('addBg');
-            }
+            toggleHeaderBg();
         }
     });
 
-    var container = $('#portfolio_wrapper');
+    function toggleHeaderBg() {
+        if (!$('#main-nav ul li:first-child').hasClass('active')) {
+            $('.header').addClass('addBg');
+        } else {
+            $('.header').removeClass('addBg');
+        }
+    }
 
+    var container = $('#portfolio_wrapper');
 
     container.isotope({
         animationEngine: 'best-available',
@@ -83,7 +72,6 @@ $(document).ready(function() {
         var winWidth = $(window).width(),
             columnNumb = 1;
 
-
         if (winWidth > 1024) {
             columnNumb = 4;
         } else if (winWidth > 900) {
@@ -96,7 +84,7 @@ $(document).ready(function() {
 
         return columnNumb;
     }
-	
+
     function setColumns() {
         var winWidth = $(window).width(),
             columnNumb = splitColumns(),
@@ -118,12 +106,47 @@ $(document).ready(function() {
         setColumns();
     });
 
-
     $(window).bind('resize', function() {
         setProjects();
     });
 
-   $(".fancybox").fancybox();
+    $(".fancybox").fancybox();
+
+    // Get the modal and body elements
+    var modal = document.getElementById('video-modal');
+    var body = document.body;
+    var scrollPosition;
+
+    // Open the video modal when a portfolio item is clicked
+    $('.portfolio-video').on('click', function(e) {
+        e.preventDefault();
+
+        var videoUrl = $(this).data('video');
+        $('#video-player source').attr('src', videoUrl);
+        $('#video-player')[0].load();
+        modal.style.display = 'block';
+        scrollPosition = window.pageYOffset; // Store the current scroll position
+        body.classList.add('modal-open');
+        body.style.top = `-${scrollPosition}px`; // Shift the body element up to prevent scrolling
+    });
+
+    // Close the video modal when the close button is clicked
+    $('.close').on('click', closeVideoModal);
+
+    // Close the video modal when clicking outside the modal content
+    $(window).on('click', function(e) {
+        if (e.target == modal) {
+            closeVideoModal();
+        }
+    });
+
+    function closeVideoModal() {
+        $('#video-player')[0].pause();
+        modal.style.display = 'none';
+        body.classList.remove('modal-open');
+        body.style.removeProperty('top'); // Reset the body element's top position
+        window.scrollTo(0, scrollPosition); // Restore the previous scroll position
+    }
 });
 
 wow = new WOW({

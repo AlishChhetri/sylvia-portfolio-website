@@ -188,19 +188,19 @@
     <!-- Portfolio Wrapper -->
     <div class="isotope fadeInLeft animated wow grid" style="position: relative; overflow: hidden; height: 240px; border-color: white;" id="portfolio_wrapper">  
       <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   animals isotope-item effect-oscar">
-	   
-        <div class="portfolio_img"> 
-		<img src="img/portfolio_pic1.jpg"  alt="Portfolio 1"> </div> 
-			<figcaption>		
-				<div>
-				  <a href="img/portfolio_pic1.jpg" class="fancybox"> 
-					<h2><span>TODO</span></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				  </a>
-				</div>
-			</figcaption>
-        </figure>
+      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four animals isotope-item effect-oscar">
+        <div class="portfolio_img">
+            <img src="img/portfolio_pic1.jpg" alt="Portfolio 1">
+        </div>
+        <figcaption>
+            <div>
+                <a class="portfolio-video" data-video="video/homework_hell_final_final.mp4">
+                    <h2><span>TODO</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </a>
+            </div>
+        </figcaption>
+    </figure>
       <!--/Portfolio Item --> 
       
       <!-- Portfolio Item-->
@@ -431,6 +431,16 @@
 <script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
 <script type="text/javascript" src="js/wow.js"></script> 
 <script type="text/javascript" src="js/custom.js"></script>
+
+<div id="video-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <video id="video-player" controls>
+      <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
 
 </body>
 </html>

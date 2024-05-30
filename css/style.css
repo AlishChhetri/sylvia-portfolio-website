@@ -143,6 +143,18 @@ a, a:hover, a:active {
   
 
 /* Common style */
+
+/* Remove scroll bar but allow scrolling */
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space for WebKit-based browsers */
+    background: transparent; /* Transparent background for scrollbar */
+}
+
+/* For other browsers */
+html {
+    scrollbar-width: none; /* Disable scrollbar for other browsers */
+}
+
 .grid figure {
 	position: relative;
 	float: left;
@@ -635,9 +647,30 @@ div#main-nav {
 ---------------------------------*/
 
 #service {
+    position: relative;
     padding: 60px 0px;
-    background: url('../img/slide4.jpg') top left no-repeat !important;
+    background-color: #EDBA85;
+    overflow: hidden; /* Ensures any content within #service stays contained */
 }
+
+#service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/slide4.jpg') left center no-repeat;
+    background-size: cover;
+    z-index: 1;
+    opacity: 1;
+}
+
+#service > * {
+    position: relative;
+    z-index: 2;
+}
+
 #service h2{
   color: #fff;
 
@@ -910,6 +943,102 @@ img {
     position: relative;
     overflow: hidden;
     border: 1px solid #000000; /* Add white border */
+}
+
+/* Video Popup */
+.video-popup .fancybox-close {
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #333;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.video-popup .fancybox-close:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* The (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 80vw;
+    max-width: 100vw;
+    max-height: 80vh;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    animation: modalFadeIn 0.5s ease;
+}
+
+.modal-content video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* The Close Button */
+.close {
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 100001;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
 }
 
 /* Happy Clients
