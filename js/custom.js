@@ -117,18 +117,14 @@ $(document).ready(function() {
     var body = document.body;
     var scrollPosition;
 
-    // Open the video modal when a portfolio item is clicked
-    $('.portfolio-video').on('click', function(e) {
-        e.preventDefault();
+$('.portfolio-video').on('click', function(e) {
+    e.preventDefault();
 
-        var videoUrl = $(this).data('video');
-        $('#video-player source').attr('src', videoUrl);
-        $('#video-player')[0].load();
-        modal.style.display = 'block';
-        scrollPosition = window.pageYOffset; // Store the current scroll position
-        body.classList.add('modal-open');
-        body.style.top = `-${scrollPosition}px`; // Shift the body element up to prevent scrolling
-    });
+    var youtubeVideoId = $(this).data('video');
+    var youtubeUrl = 'https://www.youtube.com/watch?v=' + youtubeVideoId;
+
+    window.open(youtubeUrl, '_blank');
+});
 
     // Close the video modal when the close button is clicked
     $('.close').on('click', closeVideoModal);
