@@ -48,6 +48,12 @@
     <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
 </div>
 
+<div class="logo-container">
+  <a href="index.html">
+    <img src="img/logo.png" alt="Logo">
+  </a>
+</div>
+
 <!--Header_section-->
 <header id="header_wrapper">
     <div class="container">
@@ -373,50 +379,52 @@
 <!--/Portfolio --> 
 <!--Footer-->
 <footer class="footer_wrapper" id="contact_area">
-    <div class="container">
-      <section class="page_section contact" id="contact">
-      <div class="contact_section">
-        <h2 style="color: #fff; font-size: 75px; font-weight: 400;">Contact</h2>
-	<h6 style="color: #888888; font-size: 20px; font-weight: 300;">I would love to hear from you! Feel free to reach out to me through any of the following methods.</h6>
-     
-      </div>
-      <div class="row">
-        <div class="col-lg-4 wow fadeInLeft">	
-		 <div class="contact_info">
-                              <div class="detail">
-                                <h4>LinkedIn</h4>
-                                <p><a href="https://www.linkedin.com/in/sylvia-hang-975a7a276/" target="_blank">Sylvia Hang</a></p>
-                            </div>
+  <div class="container">
+    <section class="page_section contact" id="contact">
+    <div class="contact_section">
+      <h2 style="color: #fff; font-size: 75px; font-weight: 400;">Contact</h2>
+<h6 style="color: #888888; font-size: 20px; font-weight: 300;">I would love to hear from you! Feel free to reach out to me through any of the following methods.</h6>
+   
+    </div>
+    <div class="row">
+      <div class="col-lg-4 wow fadeInLeft">	
+   <div class="contact_info">
                             <div class="detail">
-                              <h4>Instagram</h4>
-                                <p><a href="https://www.instagram.com/sylviekookie/?utm_source=qr" target="_blank">sylviekookie</a></p>
+                              <h4>LinkedIn</h4>
+                              <p><a href="https://www.linkedin.com/in/sylvia-hang-975a7a276/" target="_blank">Sylvia Hang</a></p>
+                          </div>
+                          <div class="detail">
+                            <h4>Instagram</h4>
+                              <p><a href="https://www.instagram.com/sylviekookie/?utm_source=qr" target="_blank">sylviekookie</a></p>
+                        </div> 
+                          <div class="detail">
+                            <h4>Email</h4>
+                            <p>hang01@allegheny.edu</p>
                           </div> 
-                            <div class="detail">
-                              <h4>Email</h4>
-                              <p>hang01@allegheny.edu</p>
-                            </div> 
-                        </div>
-       		  
-			  
-          
-          <ul class="social_links" style="display: none;">
-            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li> 
-          </ul>
-        </div>
-        <div class="col-lg-8 wow fadeInLeft delay-06s">
-          <div class="form">
-            <input class="input-text" type="text" name="" value="Name" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <input class="input-text" type="text" name="" value="E-Mail" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Message</textarea>
-            <input class="input-btn" type="submit" value="send message">
-          </div>
+                      </div>
+           
+      
+        
+        <ul class="social_links" style="display: none;">
+          <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+          <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+          <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
+          <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li> 
+        </ul>
+      </div>
+      <div class="col-lg-8 wow fadeInLeft delay-06s">
+        <div class="form">
+          <form id="contact-form" onsubmit="sendEmail(event)">
+              <input class="input-text" type="text" name="name" value="Name" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+              <input class="input-text" type="text" name="email" value="E-Mail" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+              <textarea class="input-text text-area" name="message" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Message</textarea>
+              <input class="input-btn" type="submit" value="send message">
+          </form>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+</div>
 </footer>
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
@@ -428,6 +436,8 @@
 <script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
 <script type="text/javascript" src="js/wow.js"></script> 
 <script type="text/javascript" src="js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script src="js/email.js"></script>
 
 </body>
 </html>
