@@ -1,476 +1,85 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, maximum-scale=1">
-<title>Sylvia Hang</title>
-<link rel="icon" href="favicon.png" type="image/png">
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-<link href="css/style.css" rel="stylesheet" type="text/css"> 
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css"> 
-<link href="css/animate.css" rel="stylesheet" type="text/css">
- 
-<!--[if lt IE 9]>
-    <script src="js/respond-1.1.0.min.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/html5element.js"></script>
-<![endif]-->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylvia Hang</title>
+
+    <!-- Scripts -->
+    <script src="./assets/js/theme_toggle.js"></script>
+    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/hello.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
- <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel" data-slide-to="1"></li>
-        <li data-target="#carousel" data-slide-to="2"></li>
-        <li data-target="#carousel" data-slide-to="3"></li>
-        <li data-target="#carousel" data-slide-to="4"></li>
-        <li data-target="#carousel" data-slide-to="5"></li>
-        <li data-target="#carousel" data-slide-to="6"></li>
-        <li data-target="#carousel" data-slide-to="7"></li>
-        <li data-target="#carousel" data-slide-to="8"></li>
-        <li data-target="#carousel" data-slide-to="9"></li>
-    </ol>
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="active item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/The_Sister_s_Quarrel.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/Tale_of_Two_Lovers.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/Murder_on_the_Dancefloor.png" alt="">
-      </div>
-      <!-- Add more carousel items for the additional images -->
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/Homework_Hell.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/What_is_the_End.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/The_Cursed.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/I_See_You.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/You_re_My_Certain_Type_of_Sadness.png" alt="">
-      </div>
-      <div class="item">
-          <div class="caption wow animated"></div>
-          <img class="" src="img/Places.png" alt="">
-      </div>
-      <div class="item">
-        <div class="caption wow animated"></div>
-        <img class="" src="img/Trip_To_HK_Thumbnail.png" alt="">
+
+<body class="home-page">
+    <div class="overlay" data-overlay></div>
+
+    <!--NAVIGATION-->
+    <nav class="navbar">
+        <!-- Left section - Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-text">SH</div>
+            </a>
+        </div>
+
+        <!-- Middle section - Nav Links -->
+        <div class="nav-links">
+            <a href="./pages/about.html" class="nav-link">About</a>
+            <a href="./pages/portfolio.html" class="nav-link">Portfolio</a>
+        </div>
+
+        <!-- Right section - Search & Toggle -->
+        <div class="navbar-right">
+            <!--Search bar-->
+            <div class="search-container">
+                <input type="text" placeholder="Search" oninput="performSearch()">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <!--Light/Dark Toggle Switch-->
+            <div class="toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-text-section">
+                <h2 id="greeting-text">Hello 👋,</h2>
+                <h1>I'm Sylvia Hang</h1>
+                <p>I am a <strong>filmmaker</strong> and <strong>visual storyteller</strong> based in NYC, capturing moments and telling stories through the lens.</p>
+            </div>
+            <div class="hero-image-section">
+                <div class="hero-image">
+                    <img src="./assets/images/sylvia_home_page.png" alt="Sylvia Hang">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
-</div>
 
-<div class="logo-container">
-  <a href="index.html">
-    <img src="img/SHlogo2.png" alt="Logo">
-  </a>
-</div>
-
-<!--Header_section-->
-<header id="header_wrapper">
-  <div class="container">
-    <div class="header_box">
-      <!--<div class="logo"><a href="#">Resume</a></div>-->
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-          <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:sylviahang18@gmail.com" target="_blank" title="Email">
+                <img src="./assets/images/logos/gmail_logo.svg" alt="Email" class="footer-image email-logo">
+            </a>
+            <a href="https://www.linkedin.com/in/sylvia-hang-975a7a276/" target="_blank" title="LinkedIn">
+                <img src="./assets/images/logos/linkedin_logo.svg" alt="LinkedIn Logo" class="footer-image linkedin-logo">
+            </a>
         </div>
-        <div id="main-nav" class="collapse navbar-collapse navStyle">
-          <ul class="nav navbar-nav" id="mainNav">
-            <li class="active"><a href="#carousel">Home</a></li>
-            <li><a href="sylviaIndex.html">About Me</a></li>
-            <li><a href="#Portfolio">Portfolio</a></li>
-            <li><a href="sylviaIndex.html#contact_area">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-</header>
-<!--Header_section--> 
-
-<section id="aboutUs" style="background-color: black; color: white; display: none;"><!--Aboutus-->
-  <div class="inner_wrapper about-us aboutUs-container fadeInLeft animated wow">
-    <div class="container">
-      <h2 style="color: rgb(255, 255, 255);">About Me</h2>
-      <h6 style="color: rgb(255, 255, 255);">A person who loves Nature and Its creations</h6>
-      <div class="inner_section">
-        <div class="row">
-          <div class="col-md-6"> <img class="img-responsive" src="img/about1.png" align=""> </div>
-          <div class="col-md-6" style="color: white;">
-            <h3 style="color: rgb(255, 255, 255);">My Passion</h3>
-            <p>Lorem ipsum dolor sit amet, quo meis voluptaria, erant bonorum albucius et per, ei placerat eu, te eos porro veniam. An everti maiorum detracto mea. Eu eos dicam voluptaria, erant bonorum albucius et per, ei sapientem accommodare est. Saepe dolorum constituam ei vel. Te sit malorum ceteros repudiandae, ne tritani adipisci vis.</p> 
-            <p>Lorem ipsum dolor sit amet, voluptaria, erant bonorum albucius et per, ei meis audire placerat eu, te eos porro veniam. An everti maiorum detracto mea. Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quisci ipsum gravida tortor orci ipsum gravida tortor. </p>
-          </div>
-        </div>
-      </div>
-    </div> 
-  </div>
-</section>
-
-<!--Aboutus--> 
-
-
-<!--Service-->
-<section  id="service" style="display: none;">
-  <div class="container">
-    <h2>My Skills</h2>
-	<h6>Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quisci ipsum</h6>
-    <div class="service_wrapper">
-      <div class="row">
-        <div class="col-md-3">
-		<div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-tree"></i></span> </div>
-          <div class="service_block">
-            
-            <h3 class="animated fadeInUp wow">Photography</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-          </div>
-        </div>
-        <div class="col-md-3"> 
-		<div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-crosshairs"></i></span> </div> 
-		<div class="service_block">
-            <h3 class="animated fadeInUp wow">Editing Skills</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-		<div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-building-o "></i></span> </div>
-          <div class="service_block">
-            
-            <h3 class="animated fadeInUp wow">Lighting</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
-          </div>
-        </div>
-		  <div class="col-md-3">
-		<div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-twitter"></i></span> </div>
-          <div class="service_block">
-            
-            <h3 class="animated fadeInUp wow">Dimensions</h3>
-            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
-          </div>
-        </div>
-      </div> 
-	 
-    </div>
-  </div>
-</section>
-<!--Service-->  
-
-<!-- Portfolio -->
-<section id="Portfolio" class="content"> 
-  
-  <!-- Container -->
-  <div class="container portfolio_title" style="display: none;"> 
-    
-    <!-- Title -->
-    <div class="section-title">
-      <h2 style="color: rgb(255, 255, 255);">Portfolio</h2>
-      <h6 style="color: rgb(129, 129, 129);">Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quisci ipsum</h6>
-    </div>
-    <!--/Title --> 
-    
-  </div>
-  <!-- Container -->
-  
-  <div class="portfolio-top"></div>
-  
-  <!-- Portfolio Filters -->
-  <div class="portfolio"> 
-    
-    <div id="filters" class="sixteen columns" style="display: none;">
-      <ul class="clearfix">
-        <li><a id="all" href="#" data-filter="*" class="active">
-          <h5>All</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".nature">
-          <h5>People</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".wildlife">
-          <h5>Animal</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".citylife">
-          <h5>Nature</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".animals">
-          <h5>Sea Scape</h5>
-          </a></li>
-      </ul>
-    </div>
-    <!--/Portfolio Filters --> 
-    
-    <!-- Portfolio Wrapper -->
-    <div class="isotope fadeInLeft animated wow grid" style="position: absolute; left: 10vw; right: 10vw; margin: auto; overflow: hidden; height: auto; border-color: white;" id="portfolio_wrapper">
-      <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/Trip_To_HK_Thumbnail.png" alt="Trip to Hong Kong">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/shorts/5zpGdJ7ke4I" target="_blank">
-                    <h2><span>HONG KONG THROUGH MY EYES</span></h2>
-                    <p>An immersive exploration of the vibrant cities of Hong Kong and Shenzhen.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-
-      <!--/Portfolio Item --> 
-            <!-- Portfolio Item -->
-            <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-              <div class="portfolio_img">
-                  <img src="img/The_Sister_s_Quarrel.png" alt="The_Sister_s_Quarrel">
-              </div>
-              <figcaption>
-                  <div>
-                    <a href="https://www.youtube.com/watch?v=mR9sIPObuyM" target="_blank">
-                          <h2><span>THE SISTER’S QUARREL</span></h2>
-                          <p>A sibling rivalry that takes a dark turn.</p>
-                      </a>
-                  </div>
-              </figcaption>
-          </figure>
-            <!--/Portfolio Item --> 
-            
-      <!-- Portfolio Item-->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/Tale_of_Two_Lovers.png" alt="Tale_of_Two_Lovers">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=cQmzbax9iHI" target="_blank">
-                    <h2><span>A TALE OF TWO LOVERS</span></h2>
-                    <p>A heartbreaking love story between two individuals.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/Murder_on_the_Dancefloor.png" alt="Murder_on_the_Dancefloor">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=hYoaHxpPS8I" target="_blank">
-                    <h2><span>MURDER ON THE DANCEFLOOR</span></h2>
-                    <p>A music video featuring an entertaining plot twist.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item--> 
-      
-      <!-- Portfolio Item-->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/Homework_Hell.png" alt="Homework_Hell">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=c_sUMhGF4NY" target="_blank">
-                    <h2><span>HOMEWORK HELL</span></h2>
-                    <p>An experimental short film using stop-motion animation.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!-- Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/What_is_the_End.png" alt="What_Is_The_End">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=-aHa_VPXckQ&t=1s" target="_blank">
-                    <h2><span>WHAT IS THE END</span></h2>
-                    <p>An experimental short film featuring jump-scare elements.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/The_Cursed.png" alt="The_Cursed">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=JDHBbOkY7ew" target="_blank">
-                    <h2><span>THE CURSED</span></h2>
-                    <p>A thriller and suspense film about possession.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item  -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/I_See_You.png" alt="I_See_You">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=ce8XGlgs24U" target="_blank">
-                    <h2><span>I SEE YOU</span></h2>
-                    <p>A short film centered on the feeling of being watched.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/You_re_My_Certain_Type_of_Sadness.png" alt="You_re_My_Certain_Type_of_Sadness">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=ArqWFNePmwc" target="_blank">
-                    <h2><span>YOU’RE MY CERTAIN TYPE OF SADNESS</span></h2>
-                    <p>A short film about remembering a loved one.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item --> 
-
-      <!-- Portfolio Item -->
-      <figure style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item animals isotope-item effect-oscar">
-        <div class="portfolio_img">
-            <img src="img/Places.png" alt="Places">
-        </div>
-        <figcaption>
-            <div>
-              <a href="https://www.youtube.com/watch?v=LfPBhFDGi28" target="_blank">
-                    <h2><span>PLACES</span></h2>
-                    <p>Observational documentary about Allegheny College.</p>
-                </a>
-            </div>
-        </figcaption>
-    </figure>
-      <!--/Portfolio Item --> 
-      
-    </div>
-    <!--/Portfolio Wrapper --> 
-    
-  </div>
-  <!--/Portfolio Filters -->
-  
-  <div class="portfolio_btm"></div>
-  
-  
-  <div id="project_container">
-    <div class="clear"></div>
-    <div id="project_data"></div>
-  </div>
- 
-  
-</section>
-<!--/Portfolio --> 
-<!--Footer-->
-<footer class="footer_wrapper" id="contact" style="display: none;">
-  <div class="container">
-    <section class="page_section contact" id="contact">
-      <div class="contact_section">
-        <h2>Contact</h2>
-	<h6>Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quisci ipsum</h6>
-     
-      </div>
-      <div class="row">
-        <div class="col-lg-4 wow fadeInLeft">	
-		 <div class="contact_info">
-                            <div class="detail">
-                                <h4>UNIQUE Infoway</h4>
-                                <p>104, Some street, NewYork, USA</p>
-                            </div>
-                            <div class="detail">
-                                <h4>call us</h4>
-                                <p>+1 234 567890</p>
-                            </div>
-                            <div class="detail">
-                                <h4>Email us</h4>
-                                <p>support@sitename.com</p>
-                            </div> 
-                        </div>
-       		  
-			  
-          
-          <ul class="social_links">
-            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li> 
-          </ul>
-        </div>
-        <div class="col-lg-8 wow fadeInLeft delay-06s">
-          <div class="form">
-            <input class="input-text" type="text" name="" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <input class="input-text" type="text" name="" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
-            <input class="input-btn" type="submit" value="send message">
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</footer>
-
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
-<script type="text/javascript" src="js/jquery.nav.js"></script> 
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.isotope.js"></script>
-<script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script> 
-<script type="text/javascript" src="js/wow.js"></script> 
-<script type="text/javascript" src="js/custom.js"></script>
-<script src="js/random-carousel.js"></script>
-
-<div id="video-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <video id="video-player" controls>
-      <source src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
-
+    </footer>
 </body>
+
 </html>
